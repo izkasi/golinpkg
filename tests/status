@@ -1,0 +1,700 @@
+Package: adduser
+Status: install ok installed
+Priority: important
+Section: admin
+Installed-Size: 849
+Maintainer: Debian Adduser Developers <adduser@packages.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Version: 3.118
+Depends: passwd, debconf (>= 0.5) | debconf-2.0
+Suggests: liblocale-gettext-perl, perl
+Conffiles:
+ /etc/deluser.conf 773fb95e98a27947de4a95abb3d3f2a2
+Description: add and remove users and groups
+ This package includes the 'adduser' and 'deluser' commands for creating
+ and removing users.
+ .
+  - 'adduser' creates new users and groups and adds existing users to
+    existing groups;
+  - 'deluser' removes users and groups and removes users from a given
+    group.
+ .
+ Adding users with 'adduser' is much easier than adding them manually.
+ Adduser will choose appropriate UID and GID values, create a home
+ directory, copy skeletal user configuration, and automate setting
+ initial values for the user's password, real name and so on.
+ .
+ Deluser can back up and remove users' home directories
+ and mail spool or all the files they own on the system.
+ .
+ A custom script can be executed after each of the commands.
+
+Package: apparmor
+Status: install ok installed
+Priority: optional
+Section: admin
+Installed-Size: 1833
+Maintainer: Debian AppArmor Team <pkg-apparmor-team@lists.alioth.debian.org>
+Architecture: amd64
+Version: 2.13.2-10
+Replaces: fcitx-data (<< 1:4.2.9.1-1ubuntu2)
+Depends: debconf, lsb-base, debconf (>= 0.5) | debconf-2.0, python3:any, libc6 (>= 2.17)
+Suggests: apparmor-profiles-extra, apparmor-utils
+Breaks: apparmor-profiles-extra (<< 1.21), fcitx-data (<< 1:4.2.9.1-1ubuntu2), media-hub, mediascanner2.0, messaging-app, webbrowser-app
+Conffiles:
+ /etc/apparmor.d/abstractions/X e7d6b5c851020c55ce6be918e3b4b270
+ /etc/apparmor.d/abstractions/apache2-common 3e80c6e6f9291caac0943569691e7dd7
+ /etc/apparmor.d/abstractions/apparmor_api/change_profile 9f4c0a621f4939af15588b7fe670dfe7
+ /etc/apparmor.d/abstractions/apparmor_api/examine f3b118b0344df2bcf4d18b81b45536bd
+ /etc/apparmor.d/abstractions/apparmor_api/find_mountpoint cf9e6513e00b441c0e3fbaf57b5c5110
+ /etc/apparmor.d/abstractions/apparmor_api/introspect 4c345c7e02de097f250c3ab12a442bed
+ /etc/apparmor.d/abstractions/apparmor_api/is_enabled 782acb0a48722a79a57d04bfb36b7c96
+ /etc/apparmor.d/abstractions/aspell fdcbf54106fd1ee376d4ade77e720488
+ /etc/apparmor.d/abstractions/audio 1f5ee9faece9e2d724682f182490f25c
+ /etc/apparmor.d/abstractions/authentication 4ca6d1cf0d2d782f23059939670643c2
+ /etc/apparmor.d/abstractions/base 4151b5090ddccdd2151474d162cd6a1b
+ /etc/apparmor.d/abstractions/bash 4a5f51dc0fe10de2eba86b22351ae092
+ /etc/apparmor.d/abstractions/consoles c7e6e00c4845e9afb877359691946386
+ /etc/apparmor.d/abstractions/cups-client ea86b52242df406f0bc955039f990006
+ /etc/apparmor.d/abstractions/dbus db5bb2211ee5ecf1d2d4eb72c0e52617
+ /etc/apparmor.d/abstractions/dbus-accessibility 1a9829023057d91f2f709b49ded37c87
+ /etc/apparmor.d/abstractions/dbus-accessibility-strict 0e07c997566b1d71b9287c0a3dcb1292
+ /etc/apparmor.d/abstractions/dbus-session e9dabe52be01410c4e4c9a9e8ef9779d
+ /etc/apparmor.d/abstractions/dbus-session-strict 1b337318faff3bd439f86dfc4b040d1d
+ /etc/apparmor.d/abstractions/dbus-strict d2a901e0369ab95a244828e2d296276e
+ /etc/apparmor.d/abstractions/dconf 02249fe91402fccef01161a61c557098
+ /etc/apparmor.d/abstractions/dovecot-common 78e81f03910bca0e407c16a1d8169861
+ /etc/apparmor.d/abstractions/dri-common 30bb562c34a60198d3fa9ef37f77ee80
+ /etc/apparmor.d/abstractions/dri-enumerate c01f5e3c4134ecd67acb00bcffde358b
+ /etc/apparmor.d/abstractions/enchant a1ac9629b466be8a41cb5f87757f3363
+ /etc/apparmor.d/abstractions/fcitx 3c43cb38623c123d8a64a02aae42b452
+ /etc/apparmor.d/abstractions/fcitx-strict dbf5ff5b2fcbaa30bd47eb6789190485
+ /etc/apparmor.d/abstractions/fonts ff494a93e6de60b340220fbf3c54a9ab
+ /etc/apparmor.d/abstractions/freedesktop.org ff99568b9ec977c5aef244149304d521
+ /etc/apparmor.d/abstractions/gnome 772826a25cbd9bcb6ceed91c9a373c1c
+ /etc/apparmor.d/abstractions/gnupg 7cde476e7fc1b5e3ae1ff8a15f0bd524
+ /etc/apparmor.d/abstractions/ibus 3e70b36c4931993a0a37d50fa6ddc1ec
+ /etc/apparmor.d/abstractions/kde f2e06a5967e321262ca9b37288cfbc12
+ /etc/apparmor.d/abstractions/kde-globals-write e8235948f44b2064ef48ee379eb061b5
+ /etc/apparmor.d/abstractions/kde-icon-cache-write 8cc2941ba1fe9989a90abc547f507bb5
+ /etc/apparmor.d/abstractions/kde-language-write 9bd64008a5bb3a805d4697a95de373a2
+ /etc/apparmor.d/abstractions/kerberosclient 165918f6f7a43c7f8026ff330500a1ba
+ /etc/apparmor.d/abstractions/ldapclient f6d4bac77e72abbace3805ad95dc5fad
+ /etc/apparmor.d/abstractions/libpam-systemd fdeb09a6c1f0d201abfd5cd12262a3b7
+ /etc/apparmor.d/abstractions/likewise eda6f01c5c1f1f09bc85a7f3a1d3ebaf
+ /etc/apparmor.d/abstractions/mdns d4959c984a530f8c682e31f34927d57e
+ /etc/apparmor.d/abstractions/mesa f5327cab99c4b23fc6843f7d3cd78556
+ /etc/apparmor.d/abstractions/mir d40c45b5284efa1e7aa8e473bf3eaa63
+ /etc/apparmor.d/abstractions/mozc fde97592da93e4b4ec9667cc0a38cd11
+ /etc/apparmor.d/abstractions/mysql be34db29008a5c06387c6928b0536ecc
+ /etc/apparmor.d/abstractions/nameservice 2864cc9ad5f278101731ac5603b3fbc3
+ /etc/apparmor.d/abstractions/nis b2a829a4e26dd3ae92ec2f67536edc20
+ /etc/apparmor.d/abstractions/nvidia 1a4da59521d8934654b04cd81b7a5a91
+ /etc/apparmor.d/abstractions/opencl 34d7e0766eec3db8b394f205dc20f44f
+ /etc/apparmor.d/abstractions/opencl-common 8f40763dcf90c692082cc2bd85046470
+ /etc/apparmor.d/abstractions/opencl-intel b5134bd9b5922602f80051baab3d40c5
+ /etc/apparmor.d/abstractions/opencl-mesa 58b8d60a9048eedcd516474ce3e10732
+ /etc/apparmor.d/abstractions/opencl-nvidia 2019459bd137008b07d6cfcdc6c68017
+ /etc/apparmor.d/abstractions/opencl-pocl d0ebd9e1ee14039d7309756e7417e10d
+ /etc/apparmor.d/abstractions/openssl 774ca398a166520a1cdb84d8b8a7b7dc
+ /etc/apparmor.d/abstractions/orbit2 98b6459f02e5c68e6ef83dced628ea5f
+ /etc/apparmor.d/abstractions/p11-kit dc059947c11d3f353c380ca7547390ce
+ /etc/apparmor.d/abstractions/perl 2efc405658e3cbcfdca9e95bfdecdcff
+ /etc/apparmor.d/abstractions/php 130943526b6654357cf5098e4a810d15
+ /etc/apparmor.d/abstractions/php5 491c7cb0bc6d38adbe874d782359ca33
+ /etc/apparmor.d/abstractions/postfix-common 01ab59eb3ee004960446eb8afbc48bcb
+ /etc/apparmor.d/abstractions/private-files 16339bf6bb6f98586eebe898ec2be0ef
+ /etc/apparmor.d/abstractions/private-files-strict d74950f8fd6025b2984bc5840b5c8b3c
+ /etc/apparmor.d/abstractions/python dfd782e3dc74329f85272c9824a50485
+ /etc/apparmor.d/abstractions/qt5 3ca990f9c74472aceebbd04d4ee61cb7
+ /etc/apparmor.d/abstractions/qt5-compose-cache-write a55aa04f2353ecf56f504a6534a7c934
+ /etc/apparmor.d/abstractions/qt5-settings-write 1faa9f6bb0a8a1221c11ae710bd9ded1
+ /etc/apparmor.d/abstractions/recent-documents-write be66dcdeafa30f11b8c499e52913fe13
+ /etc/apparmor.d/abstractions/ruby 2747c396fa14819b92683e23e8f5a889
+ /etc/apparmor.d/abstractions/samba 4cf477e098b91331621dfb729cf0c22e
+ /etc/apparmor.d/abstractions/smbpass b4d3be08dff2a9e3b4f1a18ddb65c63c
+ /etc/apparmor.d/abstractions/ssl_certs 3bdba09464a2609bc0e648c131af2814
+ /etc/apparmor.d/abstractions/ssl_keys 11c1a0c7b12e9b00963c75cfc2a5fce3
+ /etc/apparmor.d/abstractions/svn-repositories 8bc8a123d9ce516c53b818b8a4fc0ed1
+ /etc/apparmor.d/abstractions/ubuntu-bittorrent-clients 1398edfc93d57694774bcad9b83e6764
+ /etc/apparmor.d/abstractions/ubuntu-browsers 1ea182fb18a5fd3c717d475b3255dc32
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/java 8d317346861631f470d1f7e9bc92105f
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/kde 15541761a5dbdc5ccd12e85e2afe4094
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/mailto e60b3e4611a14d835d8b6fe0ffe27fc2
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/multimedia a4d49472876b6cfc23530f853ce4c7ea
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/plugins-common 07e327f4e32e2333db1f609c87831b65
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/productivity dd54584ceece9aa1ee9c3c71418cd9ae
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/text-editors 006c96f21261b0c15e2f453527136973
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/ubuntu-integration a3146cbc94bc1d8172fa09135fb82d7c
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/ubuntu-integration-xul a6d33002626e1d9a81a490e2f61509fa
+ /etc/apparmor.d/abstractions/ubuntu-browsers.d/user-files 3e31dcbbf3c77dc50d31245357ad2c4c
+ /etc/apparmor.d/abstractions/ubuntu-console-browsers d560f0509cdc8ffcdfa1dc115eee88f1
+ /etc/apparmor.d/abstractions/ubuntu-console-email 1ebfacc8ac5cfba7f3d59baceae52af8
+ /etc/apparmor.d/abstractions/ubuntu-email d26f79efcadae3acb5f26ec693da011d
+ /etc/apparmor.d/abstractions/ubuntu-feed-readers b8eb233df01672f4941357487b39cda9
+ /etc/apparmor.d/abstractions/ubuntu-gnome-terminal 886de107666e17033b11aa3abb1ce054
+ /etc/apparmor.d/abstractions/ubuntu-helpers b28b05afe5f014e585fefe86b1c75225
+ /etc/apparmor.d/abstractions/ubuntu-konsole 2ba4958d99c66160f118b5cda90b26c7
+ /etc/apparmor.d/abstractions/ubuntu-media-players ff25e51b62d2bf5146134ae3c6530c6b
+ /etc/apparmor.d/abstractions/ubuntu-unity7-base 9adb20c938466802c326a75667d06a3f
+ /etc/apparmor.d/abstractions/ubuntu-unity7-launcher 96f03042c5465f46ddadf15691507414
+ /etc/apparmor.d/abstractions/ubuntu-unity7-messaging 4b9196db0bc697cb80f7e211edc78ae0
+ /etc/apparmor.d/abstractions/ubuntu-xterm bef5766269999b9e73ad6e11dd7930bd
+ /etc/apparmor.d/abstractions/user-download 87e37fbec5bf0c055db102d71205e2a0
+ /etc/apparmor.d/abstractions/user-mail c9951880d0b3d64365a870320fbc4d50
+ /etc/apparmor.d/abstractions/user-manpages c59f25e289e9a426807ab5830136aa42
+ /etc/apparmor.d/abstractions/user-tmp 93247b3296a7f0bff353eb9ee11fba06
+ /etc/apparmor.d/abstractions/user-write 5d5f3787434d3723fde32929c1496e49
+ /etc/apparmor.d/abstractions/video 0074a8698dbf6469986df3bdf5cdef6d
+ /etc/apparmor.d/abstractions/vulkan 3b93e4afbd664b52f34eba4f80ab1353
+ /etc/apparmor.d/abstractions/wayland ba356d31c77b2505149d3635464f1f48
+ /etc/apparmor.d/abstractions/web-data 36eb024800c81ef69733027f1a27a907
+ /etc/apparmor.d/abstractions/winbind 3b37bfd8193e84c6d08809750346e7c1
+ /etc/apparmor.d/abstractions/wutmp 3cb05ef8e125c7c3edf00a505dd9e68f
+ /etc/apparmor.d/abstractions/xad 0b2fdc7be71e977e240d77338f414ec7
+ /etc/apparmor.d/abstractions/xdg-desktop d891f70210acc01e42c525012a1c3fc6
+ /etc/apparmor.d/local/README b2c6b40577b4099c584cdf731f5aeb0b
+ /etc/apparmor.d/nvidia_modprobe 24fbec2e0874828e12a24843c87b01ad
+ /etc/apparmor.d/tunables/alias 45dca5dd72a6c862d27caa936e6c00ad
+ /etc/apparmor.d/tunables/apparmorfs 5797c1a5b267c3f51d983ab8daf8f587
+ /etc/apparmor.d/tunables/dovecot 1b0d5ec63a9c87387142bdb2c94e7ede
+ /etc/apparmor.d/tunables/global 30051273dfdb88155135f0890579293a
+ /etc/apparmor.d/tunables/home ec0b11e815b30dc6fbf4d05a41aff9f5
+ /etc/apparmor.d/tunables/home.d/site.local 3b274206fb06833ee3e151e351dad51b
+ /etc/apparmor.d/tunables/kernelvars 5d30bf3c3c6e33927ba26784985ed8ab
+ /etc/apparmor.d/tunables/multiarch 6ebecd63690d4a53f3e7ff6ae48941ca
+ /etc/apparmor.d/tunables/multiarch.d/site.local 3c9eef1fbfb41fc452060086262e7bcb
+ /etc/apparmor.d/tunables/proc ffaa055ceb36031c973ffaece22a5fc0
+ /etc/apparmor.d/tunables/securityfs 45d73edb5f03d141634ec6a5ba2b10f3
+ /etc/apparmor.d/tunables/share a15f039c6615aa63acbec04b313f08f2
+ /etc/apparmor.d/tunables/sys 30f2fdf4695c26642ea02b5a2063cfbc
+ /etc/apparmor.d/tunables/xdg-user-dirs 602eaa969d2dfa00a0ec16eed9b60b7f
+ /etc/apparmor/parser.conf 6163eb18e8dd7124c639b61aae91fa23
+ /etc/init.d/apparmor 42e157dc91f6554abefa2160c2bc42db
+Description: user-space parser utility for AppArmor
+ apparmor provides the system initialization scripts needed to use the
+ AppArmor Mandatory Access Control system, including the AppArmor Parser
+ which is required to convert AppArmor text profiles into machine-readable
+ policies that are loaded into the kernel for use with the AppArmor Linux
+ Security Module.
+Homepage: http://apparmor.net/
+
+Package: apt
+Status: install ok installed
+Priority: required
+Section: admin
+Installed-Size: 4064
+Maintainer: APT Development Team <deity@lists.debian.org>
+Architecture: amd64
+Version: 1.8.2
+Replaces: apt-transport-https (<< 1.5~alpha4~), apt-utils (<< 1.3~exp2~)
+Provides: apt-transport-https (= 1.8.2)
+Depends: adduser, gpgv | gpgv2 | gpgv1, debian-archive-keyring, libapt-pkg5.0 (>= 1.7.0~alpha3~), libc6 (>= 2.15), libgcc1 (>= 1:3.0), libgnutls30 (>= 3.6.6), libseccomp2 (>= 1.0.1), libstdc++6 (>= 5.2)
+Recommends: ca-certificates
+Suggests: apt-doc, aptitude | synaptic | wajig, dpkg-dev (>= 1.17.2), gnupg | gnupg2 | gnupg1, powermgmt-base
+Breaks: apt-transport-https (<< 1.5~alpha4~), apt-utils (<< 1.3~exp2~), aptitude (<< 0.8.10)
+Conffiles:
+ /etc/apt/apt.conf.d/01autoremove 76120d358bc9037bb6358e737b3050b5
+ /etc/cron.daily/apt-compat 49e9b2cfa17849700d4db735d04244f3
+ /etc/kernel/postinst.d/apt-auto-removal 4ad976a68f045517cf4696cec7b8aa3a
+ /etc/logrotate.d/apt 179f2ed4f85cbaca12fa3d69c2a4a1c3
+Description: commandline package manager
+ This package provides commandline tools for searching and
+ managing as well as querying information about packages
+ as a low-level access to all features of the libapt-pkg library.
+ .
+ These include:
+  * apt-get for retrieval of packages and information about them
+    from authenticated sources and for installation, upgrade and
+    removal of packages together with their dependencies
+  * apt-cache for querying available information about installed
+    as well as installable packages
+  * apt-cdrom to use removable media as a source for packages
+  * apt-config as an interface to the configuration settings
+  * apt-key as an interface to manage authentication keys
+
+Package: apt-listchanges
+Status: install ok installed
+Priority: standard
+Section: utils
+Installed-Size: 399
+Maintainer: Robert Luberda <robert@debian.org>
+Architecture: all
+Version: 3.19
+Depends: apt (>= 0.5.3), python3-apt (>= 0.7.93), python3-debconf, sensible-utils, ucf (>= 0.28), debconf (>= 0.5) | debconf-2.0, python3:any (>= 3.5~)
+Suggests: default-mta | mail-transport-agent, python3-gi, www-browser, x-terminal-emulator
+Conffiles:
+ /etc/apt/apt.conf.d/20listchanges 11de4ec5529e3d15680d37d653ce1c07
+Description: package change history notification tool
+ The tool apt-listchanges can compare a new version of a
+ package with the one currently installed and show what has been
+ changed, by extracting the relevant entries from the Debian changelog
+ and NEWS files.
+ .
+ It can be run on several .deb archives at a time to get a list of all
+ changes that would be caused by installing or upgrading a group of
+ packages. When configured as an APT plugin it will do this
+ automatically during upgrades.
+
+Package: apt-transport-https
+Status: install ok installed
+Priority: optional
+Section: oldlibs
+Installed-Size: 152
+Maintainer: APT Development Team <deity@lists.debian.org>
+Architecture: all
+Source: apt
+Version: 1.8.2
+Depends: apt (>= 1.5~alpha4)
+Description: transitional package for https support
+ This is a dummy transitional package - https support has been moved into
+ the apt package in 1.5. It can be safely removed.
+
+Package: apt-utils
+Status: install ok installed
+Priority: important
+Section: admin
+Installed-Size: 1127
+Maintainer: APT Development Team <deity@lists.debian.org>
+Architecture: amd64
+Source: apt
+Version: 1.8.2
+Depends: apt (= 1.8.2), libapt-inst2.0 (>= 1.0.5), libapt-pkg5.0 (>= 1.3~rc2), libc6 (>= 2.14), libdb5.3, libgcc1 (>= 1:3.0), libstdc++6 (>= 5.2)
+Description: package management related utility programs
+ This package contains some less used commandline utilities related
+ to package management with APT.
+ .
+  * apt-extracttemplates is used by debconf to prompt for configuration
+    questions before installation.
+  * apt-ftparchive is used to create Packages and other index files
+    needed to publish an archive of Debian packages
+  * apt-sortpkgs is a Packages/Sources file normalizer.
+
+Package: base-files
+Essential: yes
+Status: install ok installed
+Priority: required
+Section: admin
+Installed-Size: 340
+Maintainer: Santiago Vila <sanvila@debian.org>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 10.3+deb10u3
+Replaces: base, dpkg (<= 1.15.0), miscutils
+Provides: base
+Pre-Depends: awk
+Breaks: debian-security-support (<< 2019.04.25), initscripts (<< 2.88dsf-13.3), sendfile (<< 2.1b.20080616-5.2~)
+Conffiles:
+ /etc/debian_version 0b7c94fa7fa37f8cc4e3ac64751c9a7f
+ /etc/dpkg/origins/debian 731423fa8ba067262f8ef37882d1e742
+ /etc/host.conf 4eb63731c9f5e30903ac4fc07a7fe3d6
+ /etc/issue af1666d8841dd1d8bf0c7b7b3e185972
+ /etc/issue.net 3987d3ddecf2f1b622bcfdb589fe42c7
+ /etc/update-motd.d/10-uname 9e1b832b7b06f566156e7c9e0548247b
+Description: Debian base system miscellaneous files
+ This package contains the basic filesystem hierarchy of a Debian system, and
+ several important miscellaneous files, such as /etc/debian_version,
+ /etc/host.conf, /etc/issue, /etc/motd, /etc/profile, and others,
+ and the text of several common licenses in use on Debian systems.
+
+Package: base-passwd
+Essential: yes
+Status: install ok installed
+Priority: required
+Section: admin
+Installed-Size: 232
+Maintainer: Colin Watson <cjwatson@debian.org>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 3.5.46
+Replaces: base
+Depends: libc6 (>= 2.8), libdebconfclient0 (>= 0.145)
+Recommends: debconf (>= 0.5) | debconf-2.0
+Description: Debian base system master password and group files
+ These are the canonical master copies of the user database files
+ (/etc/passwd and /etc/group), containing the Debian-allocated user and
+ group IDs. The update-passwd tool is provided to keep the system databases
+ synchronized with these master files.
+
+Package: bash
+Essential: yes
+Status: install ok installed
+Priority: required
+Section: shells
+Installed-Size: 6439
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 5.0-4
+Replaces: bash-completion (<< 20060301-0), bash-doc (<= 2.05-1)
+Depends: base-files (>= 2.1.12), debianutils (>= 2.15)
+Pre-Depends: libc6 (>= 2.15), libtinfo6 (>= 6)
+Recommends: bash-completion (>= 20060301-0)
+Suggests: bash-doc
+Conflicts: bash-completion (<< 20060301-0)
+Conffiles:
+ /etc/bash.bashrc 89269e1298235f1b12b4c16e4065ad0d
+ /etc/skel/.bash_logout 22bfb8c1dd94b5f3813a2b25da67463f
+ /etc/skel/.bashrc ee35a240758f374832e809ae0ea4883a
+ /etc/skel/.profile f4e81ade7d6f9fb342541152d08e7a97
+Description: GNU Bourne Again SHell
+ Bash is an sh-compatible command language interpreter that executes
+ commands read from the standard input or from a file.  Bash also
+ incorporates useful features from the Korn and C shells (ksh and csh).
+ .
+ Bash is ultimately intended to be a conformant implementation of the
+ IEEE POSIX Shell and Tools specification (IEEE Working Group 1003.2).
+ .
+ The Programmable Completion Code, by Ian Macdonald, is now found in
+ the bash-completion package.
+Homepage: http://tiswww.case.edu/php/chet/bash/bashtop.html
+
+Package: bash-completion
+Status: install ok installed
+Priority: standard
+Section: shells
+Installed-Size: 1364
+Maintainer: Gabriel F. T. Gomes <gabriel@inconstante.eti.br>
+Architecture: all
+Multi-Arch: foreign
+Version: 1:2.8-6
+Conffiles:
+ /etc/bash_completion a81b3f1cb197219b815942f4fc7fa94e
+ /etc/profile.d/bash_completion.sh 6caf94804f6065c3bb5099a70229efbd
+Description: programmable completion for the bash shell
+ bash completion extends bash's standard completion behavior to achieve
+ complex command lines with just a few keystrokes.  This project was
+ conceived to produce programmable completion routines for the most
+ common Linux/UNIX commands, reducing the amount of typing sysadmins
+ and programmers need to do on a daily basis.
+Homepage: https://github.com/scop/bash-completion
+
+Package: bind9-host
+Status: install ok installed
+Priority: standard
+Section: net
+Installed-Size: 359
+Maintainer: Debian DNS Team <team+dns@tracker.debian.org>
+Architecture: amd64
+Source: bind9
+Version: 1:9.11.5.P4+dfsg-5.1
+Provides: host
+Depends: libbind9-161 (= 1:9.11.5.P4+dfsg-5.1), libdns1104 (= 1:9.11.5.P4+dfsg-5.1), libisc1100 (= 1:9.11.5.P4+dfsg-5.1), libisccfg163 (= 1:9.11.5.P4+dfsg-5.1), liblwres161 (= 1:9.11.5.P4+dfsg-5.1), libc6 (>= 2.14), libcap2 (>= 1:2.10), libcom-err2 (>= 1.43.9), libfstrm0 (>= 0.2.0), libgeoip1, libgssapi-krb5-2 (>= 1.6.dfsg.2), libidn2-0 (>= 2.0.0), libjson-c3 (>= 0.10), libk5crypto3 (>= 1.6.dfsg.2), libkrb5-3 (>= 1.6.dfsg.2), liblmdb0 (>= 0.9.6), libprotobuf-c1 (>= 1.0.0), libssl1.1 (>= 1.1.0), libxml2 (>= 2.6.27)
+Description: DNS lookup utility (deprecated)
+ This package provides /usr/bin/host, a simple utility (bundled with the
+ BIND 9.X sources) which can be used for converting domain names to IP
+ addresses and the reverse.
+ .
+ This utility is deprecated, use dig or delv from the dnsutils package.
+Homepage: https://www.isc.org/downloads/bind/
+
+Package: binutils
+Status: install ok installed
+Priority: optional
+Section: devel
+Installed-Size: 93
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Version: 2.31.1-16
+Provides: binutils-gold, elf-binutils
+Depends: libc6 (>= 2.27), zlib1g (>= 1:1.1.4), binutils-common (= 2.31.1-16), libbinutils (= 2.31.1-16), binutils-x86-64-linux-gnu (= 2.31.1-16)
+Suggests: binutils-doc (>= 2.31.1-16)
+Conflicts: binutils-mingw-w64-i686 (<< 2.23.52.20130612-1+3), binutils-mingw-w64-x86-64 (<< 2.23.52.20130612-1+3), binutils-multiarch (<< 2.27-8), modutils (<< 2.4.19-1)
+Description: GNU assembler, linker and binary utilities
+ The programs in this package are used to assemble, link and manipulate
+ binary and object files.  They may be used in conjunction with a compiler
+ and various libraries to build programs.
+Homepage: https://www.gnu.org/software/binutils/
+
+Package: binutils-common
+Status: install ok installed
+Priority: optional
+Section: devel
+Installed-Size: 13000
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Source: binutils
+Version: 2.31.1-16
+Replaces: binutils (<< 2.29.1-3.1~)
+Breaks: binutils (<< 2.29.1-3.1~)
+Description: Common files for the GNU assembler, linker and binary utilities
+ This package contains the localization files used by binutils packages for
+ various target architectures and parts of the binutils documentation. It is
+ not useful on its own.
+Homepage: https://www.gnu.org/software/binutils/
+
+Package: binutils-x86-64-linux-gnu
+Status: install ok installed
+Priority: optional
+Section: devel
+Installed-Size: 11537
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Multi-Arch: allowed
+Source: binutils
+Version: 2.31.1-16
+Replaces: binutils (<< 2.29-6)
+Depends: binutils-common (= 2.31.1-16), libbinutils (= 2.31.1-16), libc6 (>= 2.27), zlib1g (>= 1:1.1.4)
+Suggests: binutils-doc (= 2.31.1-16)
+Breaks: binutils (<< 2.29-6)
+Description: GNU binary utilities, for x86-64-linux-gnu target
+ This package provides GNU assembler, linker and binary utilities
+ for the x86-64-linux-gnu target.
+ .
+ You don't need this package unless you plan to cross-compile programs
+ for x86-64-linux-gnu and x86-64-linux-gnu is not your native platform.
+Homepage: https://www.gnu.org/software/binutils/
+
+Package: bsdmainutils
+Status: install ok installed
+Priority: important
+Section: utils
+Installed-Size: 587
+Maintainer: Debian Bsdmainutils Team <pkg-bsdmainutils@teams.debian.net>
+Architecture: amd64
+Multi-Arch: foreign
+Source: bsdmainutils (11.1.2)
+Version: 11.1.2+b1
+Depends: libbsd0 (>= 0.2.0), libc6 (>= 2.14), libtinfo6 (>= 6), bsdutils (>= 3.0-0), debianutils (>= 1.8)
+Suggests: cpp, wamerican | wordlist, whois, vacation
+Breaks: bsdutils (<< 1:2.13-11)
+Conffiles:
+ /etc/calendar/default f499e79b0d2d685aa5ae7e1013940b96
+ /etc/cron.daily/bsdmainutils 559387f792462a62e3efb1d573e38d11
+ /etc/default/bsdmainutils bded239f4fea461cc5c92c3bd5a28cc9
+Description: collection of more utilities from FreeBSD
+ This package contains lots of small programs many people expect to find when
+ they use a BSD-style Unix system.
+ .
+ It provides banner (as printerbanner), calendar, col, colcrt, colrm, column,
+ from (as bsd-from), hexdump (or hd), look, lorder, ncal (or cal), ul, and
+ write (as bsd-write).
+ .
+ This package used to contain whois and vacation, which are now distributed in
+ their own packages. Also here was tsort, which is now in the "coreutils"
+ package.
+
+Package: bsdutils
+Essential: yes
+Status: install ok installed
+Priority: required
+Section: utils
+Installed-Size: 293
+Maintainer: LaMont Jones <lamont@debian.org>
+Architecture: amd64
+Multi-Arch: foreign
+Source: util-linux (2.33.1-0.1)
+Version: 1:2.33.1-0.1
+Replaces: bash-completion (<< 1:2.1-4.1~)
+Pre-Depends: libc6 (>= 2.14), libsystemd0
+Recommends: bsdmainutils
+Breaks: bash-completion (<< 1:2.1-4.1~)
+Description: basic utilities from 4.4BSD-Lite
+ This package contains the bare minimum of BSD utilities needed for a
+ Debian system: logger, renice, script, scriptreplay, and wall. The
+ remaining standard BSD utilities are provided by bsdmainutils.
+
+Package: build-essential
+Status: install ok installed
+Priority: optional
+Section: devel
+Installed-Size: 20
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: amd64
+Version: 12.6
+Depends: libc6-dev | libc-dev, gcc (>= 4:8.3), g++ (>= 4:8.3), make, dpkg-dev (>= 1.17.11)
+Description: Informational list of build-essential packages
+ If you do not plan to build Debian packages, you don't need this
+ package.  Starting with dpkg (>= 1.14.18) this package is required
+ for building Debian packages.
+ .
+ This package contains an informational list of packages which are
+ considered essential for building Debian packages.  This package also
+ depends on the packages on that list, to make it easy to have the
+ build-essential packages installed.
+ .
+ If you have this package installed, you only need to install whatever
+ a package specifies as its build-time dependencies to build the
+ package.  Conversely, if you are determining what your package needs
+ to build-depend on, you can always leave out the packages this
+ package depends on.
+ .
+ This package is NOT the definition of what packages are
+ build-essential; the real definition is in the Debian Policy Manual.
+ This package contains merely an informational list, which is all
+ most people need.   However, if this package and the manual disagree,
+ the manual is correct.
+
+Package: busybox
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 768
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Architecture: amd64
+Version: 1:1.30.1-4
+Replaces: busybox-static
+Depends: libc6 (>= 2.28)
+Breaks: initramfs-tools (<< 0.99)
+Conflicts: busybox-static
+Description: Tiny utilities for small and embedded systems
+ BusyBox combines tiny versions of many common UNIX utilities into a single
+ small executable. It provides minimalist replacements for the most common
+ utilities you would usually find on your desktop system (i.e., ls, cp, mv,
+ mount, tar, etc.). The utilities in BusyBox generally have fewer options than
+ their full-featured GNU cousins; however, the options that are included
+ provide the expected functionality and behave very much like their GNU
+ counterparts.
+ .
+ This package installs the BusyBox binary but does not install
+ symlinks for any of the supported utilities. Some of the utilities
+ can be used in the system by installing the busybox-syslogd,
+ busybox-udhcpc or busybox-udhcpd packages.
+Homepage: http://www.busybox.net
+
+Package: bzip2
+Status: install ok installed
+Priority: standard
+Section: utils
+Installed-Size: 196
+Maintainer: Anibal Monsalve Salazar <anibal@debian.org>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 1.0.6-9.2~deb10u1
+Replaces: libbz2 (<< 0.9.5d-3)
+Depends: libbz2-1.0 (= 1.0.6-9.2~deb10u1), libc6 (>= 2.14)
+Suggests: bzip2-doc
+Description: high-quality block-sorting file compressor - utilities
+ bzip2 is a freely available, patent free, data compressor.
+ .
+ bzip2 compresses files using the Burrows-Wheeler block-sorting text
+ compression algorithm, and Huffman coding.  Compression is generally
+ considerably better than that achieved by more conventional
+ LZ77/LZ78-based compressors, and approaches the performance of the PPM
+ family of statistical compressors.
+ .
+ The archive file format of bzip2 (.bz2) is incompatible with that of its
+ predecessor, bzip (.bz).
+Homepage: https://web.archive.org/web/20180801004107/http://www.bzip.org/
+
+Package: ca-certificates
+Status: install ok installed
+Priority: optional
+Section: misc
+Installed-Size: 384
+Maintainer: Michael Shuler <michael@pbandjelly.org>
+Architecture: all
+Multi-Arch: foreign
+Version: 20190110
+Depends: openssl (>= 1.1.1), debconf (>= 0.5) | debconf-2.0
+Breaks: ca-certificates-java (<< 20121112+nmu1)
+Enhances: openssl
+Description: Common CA certificates
+ Contains the certificate authorities shipped with Mozilla's browser to allow
+ SSL-based applications to check for the authenticity of SSL connections.
+ .
+ Please note that Debian can neither confirm nor deny whether the
+ certificate authorities whose certificates are included in this package
+ have in any way been audited for trustworthiness or RFC 3647 compliance.
+ Full responsibility to assess them belongs to the local system
+ administrator.
+
+Package: cloc
+Status: install ok installed
+Priority: optional
+Section: devel
+Installed-Size: 533
+Maintainer: Jari Aalto <jari.aalto@cante.net>
+Architecture: all
+Version: 1.80-1
+Depends: libalgorithm-diff-perl, libparallel-forkmanager-perl, libregexp-common-perl, perl:any
+Description: statistics utility to count lines of code
+ Count physical lines of source code in the given files (may be
+ archives such as compressed tarballs or zip files) and/or
+ recursively below the given directories.
+ .
+ Counts blank lines, comment lines, and physical lines of source code
+ in many programming languages. It is written entirely in Perl, using
+ only modules from the standard distribution.
+Homepage: https://github.com/AlDanial/cloc
+
+Package: console-setup
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 421
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Version: 1.193~deb10u1
+Depends: console-setup-linux | console-setup-freebsd | hurd, xkb-data (>= 0.9), keyboard-configuration (= 1.193~deb10u1)
+Pre-Depends: debconf (>= 1.5.34)
+Suggests: lsb-base (>= 3.0-6), locales
+Breaks: lsb (<< 2.0-6), lsb-base (<< 3.0-6), lsb-core (<< 2.0-6)
+Conflicts: console-setup-mini
+Description: console font and keymap setup program
+ This package provides the console with the same keyboard
+ configuration scheme as the X Window System. As a result, there is no
+ need to duplicate or change the keyboard files just to make simple
+ customizations such as the use of dead keys, the key functioning as
+ AltGr or Compose key, the key(s) to switch between Latin and
+ non-Latin mode, etc.
+ .
+ The package also installs console fonts supporting many of the
+ world's languages.  It provides an unified set of font faces - the
+ classic VGA, the simplistic Fixed, and the cleaned Terminus,
+ TerminusBold and TerminusBoldVGA.
+
+Package: console-setup-linux
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 1758
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Source: console-setup
+Version: 1.193~deb10u1
+Replaces: console-setup (<< 1.71), console-terminus
+Provides: console-terminus
+Depends: kbd (>= 0.99-12) | console-tools (>= 1:0.2.3-16), keyboard-configuration (= 1.193~deb10u1), init-system-helpers (>= 1.29~) | initscripts
+Suggests: console-setup
+Breaks: console-cyrillic (<= 0.9-11), console-setup (<< 1.71), console-terminus
+Conflicts: console-setup-freebsd
+Conffiles:
+ /etc/console-setup/compose.ARMSCII-8.inc fef36b61fb8b1cacc151ad3db127f777
+ /etc/console-setup/compose.CP1251.inc fef88d8c8dd4c726498003fd3cd84a7f
+ /etc/console-setup/compose.CP1255.inc c972a2e90938657e97b643366b98b2ed
+ /etc/console-setup/compose.CP1256.inc 5ea5e4d41da7a88f742863810e86144b
+ /etc/console-setup/compose.GEORGIAN-ACADEMY.inc b6d80f40abff7e8af236796ebaca0247
+ /etc/console-setup/compose.GEORGIAN-PS.inc cf45272b6bf35a22223b132600dc36c3
+ /etc/console-setup/compose.IBM1133.inc a31102602f7e7cab9738022b6c5469ae
+ /etc/console-setup/compose.ISIRI-3342.inc 5ada7fbba750192f11fa238add232ba9
+ /etc/console-setup/compose.ISO-8859-1.inc 28f20a64f3f0b175cfaec4bce07465c2
+ /etc/console-setup/compose.ISO-8859-10.inc e5fce59617c839b56574c9e323d34686
+ /etc/console-setup/compose.ISO-8859-11.inc ad2f3cc7ee64602a790bad8a2a989243
+ /etc/console-setup/compose.ISO-8859-13.inc 5e9ad266f17ff2a0281a870079bc8284
+ /etc/console-setup/compose.ISO-8859-14.inc 360a44f83e8f8c9d463c9400dcc60de4
+ /etc/console-setup/compose.ISO-8859-15.inc 695ec832355223fb036629e4e6a9a963
+ /etc/console-setup/compose.ISO-8859-16.inc 8245c19b5262d8d23ca856587739eb20
+ /etc/console-setup/compose.ISO-8859-2.inc c93ffa7f80e22c04c94e89a0cd742458
+ /etc/console-setup/compose.ISO-8859-3.inc 67b8fafc842a4dc9b3bc0c06af394834
+ /etc/console-setup/compose.ISO-8859-4.inc aba127ff3df5159c3070617a7efac46c
+ /etc/console-setup/compose.ISO-8859-5.inc f861a4b0403490677e6d400f2d7129da
+ /etc/console-setup/compose.ISO-8859-6.inc 41ea36ea1c1a1c0c9bebdf0016395e1f
+ /etc/console-setup/compose.ISO-8859-7.inc 8f48a9f7c9f69ca828edbd7b276fe406
+ /etc/console-setup/compose.ISO-8859-8.inc 9cceaa9f3312f89aba371d3c893f4e7b
+ /etc/console-setup/compose.ISO-8859-9.inc 05aae7589b5062a53f346f721cb0f7d3
+ /etc/console-setup/compose.KOI8-R.inc 8cfd7766b86e5e55d6e71d0d95519c92
+ /etc/console-setup/compose.KOI8-U.inc 217ee62f6982736276f41f760f8622f8
+ /etc/console-setup/compose.TIS-620.inc 31b73af83ef3993c128e2b983b9eaf89
+ /etc/console-setup/compose.VISCII.inc e4ffc74868adf4cc39ba61dd99581899
+ /etc/console-setup/remap.inc b72cfe32ffa93987f74c5cec9ac180fd
+ /etc/init.d/console-setup.sh 510488b5120b580b673a15b75a5498b0
+ /etc/init.d/keyboard-setup.sh b868200c6e36ef87e27ead9a3ddad2db
+Description: Linux specific part of console-setup
+ This package includes fonts in psf format and definitions of various
+ 8-bit charmaps.
+
