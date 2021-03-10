@@ -77,21 +77,15 @@ func mapLine(key string, value string, pkg *DebianPackage) {
 		pkg.Depends = value
 
 	case "Conffiles":
-		if value == "." {
-			pkg.Conffiles = append(pkg.Conffiles, "")
-
-		} else {
+		if value != "" {
 			pkg.Conffiles = append(pkg.Conffiles, value)
-
 		}
 
 	case "Description":
 		if value == "." {
 			pkg.Description = append(pkg.Description, "")
-
 		} else {
 			pkg.Description = append(pkg.Description, value)
-
 		}
 
 	}

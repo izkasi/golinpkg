@@ -23,8 +23,8 @@ func TestParseStatus(t *testing.T) {
 		t.Errorf("Parsed package was incorrect, got: %s, want: %s.", pkgs[10].Package, "bind9-host")
 	}
 
-	if len(pkgs[9].Conffiles) != 3 {
-		t.Errorf("Parsed package Conffiles was incorrect, got: %d, want: %d.", len(pkgs[9].Conffiles), 3)
+	if len(pkgs[9].Conffiles) != 2 {
+		t.Errorf("Parsed package Conffiles was incorrect, got: %d, want: %d.", len(pkgs[9].Conffiles), 2)
 	}
 
 }
