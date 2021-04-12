@@ -32,13 +32,9 @@ func parseLine(line string) (string, string) {
 		return "", line
 	}
 
-	kv := strings.Split(line, ":")
+	sep := strings.Index(line, ":")
 
-	if len(kv[1]) == 0 {
-		return kv[0], ""
-	}
-
-	return kv[0], kv[1][1:len(kv[1])]
+	return line[0:sep], line[sep+1:]
 }
 
 func mapLine(key string, value string, pkg *DebianPackage) {

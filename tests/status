@@ -30,6 +30,24 @@ Description: add and remove users and groups
  .
  A custom script can be executed after each of the commands.
 
+Package: libcap2
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 52
+Maintainer: Christian Kastner <ckk@debian.org>
+Architecture: amd64
+Multi-Arch: same
+Version: 1:2.25-2
+Depends: libc6 (>= 2.14)
+Description: POSIX 1003.1e capabilities (library)
+ Libcap implements the user-space interfaces to the POSIX 1003.1e capabilities
+ available in Linux kernels. These capabilities are a partitioning of the all
+ powerful root privilege into a set of distinct privileges.
+ .
+ This package contains the shared library.
+
+Homepage: https://sites.google.com/site/fullycapable/
 Package: apparmor
 Status: install ok installed
 Priority: optional
