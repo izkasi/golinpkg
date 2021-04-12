@@ -39,6 +39,9 @@ func parseLine(line string) (string, string) {
 
 func mapLine(key string, value string, pkg *DebianPackage) {
 
+	value = strings.TrimLeft(value, " ")
+	value = strings.TrimRight(value, " \n")
+
 	switch key {
 	case "Package":
 		pkg.Package = value
